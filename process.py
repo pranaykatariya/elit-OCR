@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request
 
 # import our OCR function
-from OCR_try import ocr_core
+from OCR_try import ocr_core 
 
 # define a folder to store and later serve the images
 UPLOAD_FOLDER = '/static/uploads/'
