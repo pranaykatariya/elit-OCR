@@ -74,7 +74,7 @@ def upload_page():
             to_user = result
             time_now = timestamp
             #json object to add data to database
-            details_object = {'complainer':"Null"
+            details_object = {'complainer':"Null",
                             'abuser':from_user,
                             'victim':to_user,
                             'tweet':tweet,
