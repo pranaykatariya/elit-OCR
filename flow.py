@@ -1,5 +1,7 @@
 import os
 from flask import Flask, render_template, request
+import re
+import requests
 
 # import our OCR function
 from OCR_try import ocr_core 
@@ -76,6 +78,7 @@ def upload_page():
             result = re.findall("@([a-zA-Z0-9]{1,15})", tweet)
             #calling above function by passing tweet
             # prediction = check_bullying(tweet)
+            prediction= 0.8
             #add new api for posting data
             post_url = 'http://cyber-bullying-api.herokuapp.com/api/report-create/'
             email_url ='http://cyber-bullying-report.herokuapp.com/api/sendmail/1'
@@ -106,7 +109,7 @@ def upload_page():
                             'time_now':time_now,
                             'to':'pratikbansode2@gmail.com'}
             #calling to post data to database
-            requests.post(url = url, data = details_object)
+            requests.post(url = post_url, data = details_object)
             #calling to send email
             #requests.post(url = email_url,data = email_object)
             
