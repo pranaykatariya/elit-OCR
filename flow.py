@@ -52,9 +52,19 @@ def upload_page():
             timestamp = data[-1]
             data.pop(-1)
             timestamp = timestamp.split("-")
-            time = timestamp[0]
-            date = timestamp[1]
-            platform = timestamp[2]
+            time = ""
+            if timestamp[0]:
+                time = timestamp[0]
+            
+            date = ""
+            if timestamp[1]:
+                date = timestamp[1]
+            
+            platform = ""
+
+            if timestamp[2]:
+                platform  = timestamp[2]
+
             tweet = (" ".join(data))
 
             #to get tagged username from tweet
